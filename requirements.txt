@@ -1,7 +1,7 @@
 streamlit
 shap
 leafmap
-git+git://github.com/geopandas/geopandas.git
+geopandas
 descartes
 geopandas
 keplergl
