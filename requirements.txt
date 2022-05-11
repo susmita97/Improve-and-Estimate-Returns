@@ -1,4 +1,4 @@
-streamlit -q
+streamlit
 shap
 leafmap
 git+git://github.com/geopandas/geopandas.git
