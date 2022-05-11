@@ -1,0 +1,12 @@
+pip install streamlit -q
+pip install shap
+pip install leafmap
+apt install gdal-bin python-gdal python3-gdal
+apt install python3-rtree
+pip install git+git://github.com/geopandas/geopandas.git
+pip install descartes
+pip install geopandas
+pip install keplergl
+pip install lime
+pip install dice-ml
+pip install dill
