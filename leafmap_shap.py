@@ -13,7 +13,7 @@ import dill
 import geopandas
 import leafmap.foliumap as leafmap
 
-st.set_page_config(layout="wide")
+#st.set_page_config(layout="wide")
 
 @st.cache(suppress_st_warning=True)
 def display_neighborhoods(df):
