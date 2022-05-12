@@ -14,7 +14,7 @@ Find similar properties which have the same features affecting the price point (
 """)
 
 # Add all your application here
-app.add_app("Predict current price", form.app)
+app.add_app("Predict current or future price", form.app)
 app.add_app("Get Counterfactuals", dice_form.app)
 app.add_app("Find similar properties", leafmap_shap.app)
 # The main app
