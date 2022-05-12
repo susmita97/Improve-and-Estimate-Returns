@@ -15,38 +15,6 @@ import leafmap.foliumap as leafmap
 
 #st.set_page_config(layout="wide")
 
-@st.cache(suppress_st_warning=True)
-def display_neighborhoods(df):
-
-    neighborhoods = list(df['neighborhood'].unique())
-    bcategory = list(df['building_class_category'].unique())
-
-    neighborhoodsman = []
-    neighborhoodsbrook = []
-    neighborhoodsbronx = []
-    neighborhoodsqueens = []
-    neighborhoodsstat = []
-
-    for index,rows in df.iterrows():
-      if rows['borough'] == 1:
-        neighborhoodsman.append(rows['neighborhood'])
-      elif rows['borough'] == 2:
-        neighborhoodsbronx.append(rows['neighborhood'])
-      elif rows['borough'] == 3:
-        neighborhoodsbrook.append(rows['neighborhood'])
-      elif rows['borough'] == 4:
-        neighborhoodsqueens.append(rows['neighborhood'])
-      else:
-        neighborhoodsstat.append(rows['neighborhood'])
-
-    neighborhoodsman = set(neighborhoodsman)
-    neighborhoodsbronx = set(neighborhoodsbronx)
-    neighborhoodsbrook = set(neighborhoodsbrook)
-    neighborhoodsqueens = set(neighborhoodsqueens)
-    neighborhoodsstat = set(neighborhoodsstat)
-
-    return [neighborhoodsman,neighborhoodsbronx,neighborhoodsbrook,neighborhoodsqueens,neighborhoodsstat,bcategory]
-
 @st.cache(suppress_st_warning = True, allow_output_mutation=True)
 def load_imp():
 
@@ -91,6 +59,38 @@ def load_imp():
     cluster3 = final_df_cluster[final_df_cluster['cluster no']==2]
 
     return [dfcopy, shap_exp, kmeans, cluster1, cluster2, cluster3]
+
+@st.cache(suppress_st_warning=True)
+def display_neighborhoods(df):
+
+    neighborhoods = list(df['neighborhood'].unique())
+    bcategory = list(df['building_class_category'].unique())
+
+    neighborhoodsman = []
+    neighborhoodsbrook = []
+    neighborhoodsbronx = []
+    neighborhoodsqueens = []
+    neighborhoodsstat = []
+
+    for index,rows in df.iterrows():
+      if rows['borough'] == 1:
+        neighborhoodsman.append(rows['neighborhood'])
+      elif rows['borough'] == 2:
+        neighborhoodsbronx.append(rows['neighborhood'])
+      elif rows['borough'] == 3:
+        neighborhoodsbrook.append(rows['neighborhood'])
+      elif rows['borough'] == 4:
+        neighborhoodsqueens.append(rows['neighborhood'])
+      else:
+        neighborhoodsstat.append(rows['neighborhood'])
+
+    neighborhoodsman = set(neighborhoodsman)
+    neighborhoodsbronx = set(neighborhoodsbronx)
+    neighborhoodsbrook = set(neighborhoodsbrook)
+    neighborhoodsqueens = set(neighborhoodsqueens)
+    neighborhoodsstat = set(neighborhoodsstat)
+
+    return [neighborhoodsman,neighborhoodsbronx,neighborhoodsbrook,neighborhoodsqueens,neighborhoodsstat,bcategory]
 
 def app():
 
