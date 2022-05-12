@@ -70,6 +70,9 @@ def app():
     st.title('Real Estate Analytics')
     st.write('Please enter some information below about your property')
     st.write('The system will predict the current price of your property')
+    st.write('If you want a future price point please add the number of years in the Property Age value')
+    st.write('Property prices grew by 17 % over the last two years(2020-2021)')
+    st.write('Property prices grow at a rate of around 10 % per year in NYC and are predicted to rise by at least 10 % from now on.')
     st.write('All are required fields')
 
     listofelements = load_imp()
