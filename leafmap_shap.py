@@ -268,7 +268,7 @@ def app():
             except:
                 st.error("Please select a numeric column")
 
-        except Exception as e:
-            st.error(e)
-
+          except Exception as e:
+             st.error(e)
+        
         m.to_streamlit()
