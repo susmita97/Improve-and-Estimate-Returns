@@ -192,10 +192,7 @@ def app():
         genetic_boston = exp_genetic_boston.generate_counterfactuals(query_instances_boston,
                                                                      total_CFs=20,
                                                                      desired_range=[range1, range2],
-        permitted_range={'TOTAL UNITS': [1, 60], 'COMMERCIAL UNITS': [1, 60], 'RESIDENTIAL UNITS': [1, 60],
-                         'LAND SQUARE FEET': [3000,10000],
-                         'GROSS SQUARE FEET': [4000,10000],
-                        'PROPERTY AGE': 120, 200]})
+        permitted_range={'TOTAL UNITS': [1, 60], 'COMMERCIAL UNITS': [1, 60], 'RESIDENTIAL UNITS': [1, 60],'LAND SQUARE FEET': [3000,10000],'GROSS SQUARE FEET': [4000,10000],'PROPERTY AGE': [120, 200]})
 
         cfdf = genetic_boston.cf_examples_list[0].final_cfs_df
 
