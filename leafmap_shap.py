@@ -263,12 +263,12 @@ def app():
                         except:
                             st.error("Please select a numeric column")
 
-            try:
-                m.add_points_from_xy(df, x, y, popups)
-            except:
-                st.error("Please select a numeric column")
+                try:
+                    m.add_points_from_xy(df, x, y, popups)
+                except:
+                    st.error("Please select a numeric column")
 
-          except Exception as e:
-             st.error(e)
-        
+            except Exception as e:
+                st.error(e)
+
         m.to_streamlit()
