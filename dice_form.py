@@ -193,9 +193,9 @@ def app():
                                                                      total_CFs=20,
                                                                      desired_range=[range1, range2],
         permitted_range={'TOTAL UNITS': [1, 60], 'COMMERCIAL UNITS': [1, 60], 'RESIDENTIAL UNITS': [1, 60],
-                         'LAND SQUARE FEET': [df3['LAND SQUARE FEET'],df3['LAND SQUARE FEET']+5000],
-                         'GROSS SQUARE FEET': [df3['GROSS SQUARE FEET'],df3['GROSS SQUARE FEET']+5000],
-                        'PROPERTY AGE': [df3['PROPERTY AGE'], df3['PROPERTY AGE']+70]})
+                         'LAND SQUARE FEET': [3000,10000],
+                         'GROSS SQUARE FEET': [4000,10000],
+                        'PROPERTY AGE': 120, 200]})
 
         cfdf = genetic_boston.cf_examples_list[0].final_cfs_df
 
