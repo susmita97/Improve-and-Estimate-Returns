@@ -152,7 +152,7 @@ def app():
         'SALE PRICE_BOROUGH':[0.0],'SALE PRICE_NEIGHBORHOOD':[0.0],'SALE PRICE_TAX':[0.0],'SALE PRICE_BUILDING_CLASS':[0.0]}
         df3 = pd.DataFrame(df2)
 
-        std_encoding=df.groupby('borough').agg({'sale_price':['std']}).reset_index()
+        std_encoding=dfcopy.groupby('borough').agg({'sale_price':['std']}).reset_index()
         std_encoding.columns = ['borough','sale_price_borough']
         sale_price_b = std_encoding['sale_price_borough'][std_encoding['borough']==df3['SALE PRICE_B'][0]]
         df3['SALE PRICE_BOROUGH'][0] = sale_price_b
@@ -160,7 +160,7 @@ def app():
 
 
 
-        std_encoding=df.groupby('neighborhood').agg({'sale_price':['std']}).reset_index()
+        std_encoding=dfcopy.groupby('neighborhood').agg({'sale_price':['std']}).reset_index()
         std_encoding.columns = ['neighborhood','sale_price_neighborhood']
         sale_price_n = std_encoding['sale_price_neighborhood'][std_encoding['neighborhood']==df3['SALE PRICE_N'][0]]
         df3['SALE PRICE_NEIGHBORHOOD'][0] = sale_price_n
@@ -168,7 +168,7 @@ def app():
 
 
 
-        std_encoding=df.groupby('tax_class').agg({'sale_price':['std']}).reset_index()
+        std_encoding=dfcopy.groupby('tax_class').agg({'sale_price':['std']}).reset_index()
         std_encoding.columns = ['tax_class','sale_price_tax']
         if tax == 1:
             sale_price_t = std_encoding['sale_price_tax'][std_encoding['tax_class']==1]
@@ -183,7 +183,7 @@ def app():
         df3 = df3.drop('SALE PRICE_T',axis = 1)
 
 
-        std_encoding=df.groupby('building_class_category').agg({'sale_price':['std']}).reset_index()
+        std_encoding=dfcopy.groupby('building_class_category').agg({'sale_price':['std']}).reset_index()
         std_encoding.columns = ['building_class_category','sale_price_building_class']
         sale_price_bu = std_encoding['sale_price_building_class'][std_encoding['building_class_category']==df3['SALE PRICE_BG_CLASS'][0]]
         df3['SALE PRICE_BUILDING_CLASS'][0] = sale_price_bu
