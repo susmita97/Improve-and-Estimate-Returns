@@ -5,8 +5,12 @@ import form, dice_form, leafmap_shap
 app = MultiApp()
 
 st.markdown("""
-# Multi-Page App
-This multi-page app is using the [streamlit-multiapps](https://github.com/upraneelnihar/streamlit-multiapps) framework developed by [Praneel Nihar](https://medium.com/@u.praneel.nihar). Also check out his [Medium article](https://medium.com/@u.praneel.nihar/building-multi-page-web-app-using-streamlit-7a40d55fa5b4).
+# Improve and Estimate Real Estate Returns
+The application helps you to predict the current and future price for your property, and generate an explanation for the 
+feature affecting the price (Select Option One). 
+It will also generate and tell you values for the features below required to attain a particular sale price point you want
+(Select Option Two). 
+Find similar properties which have the same features affecting the price point (Select Option Three).
 """)
 
 # Add all your application here
