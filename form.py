@@ -12,7 +12,7 @@ import shap
 
 import dill
 
-@st.cache
+@st.cache_data
 def load_imp():
     df = pd.read_csv('dfcopy.csv')
 
@@ -33,7 +33,7 @@ def load_imp():
 
 
 
-@st.cache
+@st.cache_data
 def display_neighborhoods(df):
 
     neighborhoods = list(df['neighborhood'].unique())
@@ -237,4 +237,5 @@ def app():
         st.write('SHAP Explanation for the input')
 
         st.pyplot(shap.decision_plot(explainer.expected_value, shap_values_input, test_X))
+
 
