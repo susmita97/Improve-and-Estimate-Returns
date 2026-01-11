@@ -229,7 +229,7 @@ def app():
         ax.bar(ylabels,xvalues,color=colors,label='Counterfactual')
         ax.set_ylim(0,s3.max()+1)
         ax.legend()
-        plt.show()
+        #plt.show()
 
         st.pyplot(plt,bbox_inches='tight')
 
@@ -253,7 +253,7 @@ def app():
         ax.bar(ylabels,xvalues,color=colors,label='Counterfactual')
         ax.set_ylim(0,s3.max()+1)
         ax.legend()
-        plt.show()
+        #plt.show()
 
         st.pyplot(plt,bbox_inches='tight')
 
@@ -277,7 +277,7 @@ def app():
             ax.bar(ylabels,xvalues,color=colors,label='Counterfactual')
             ax.set_ylim(0,s3.max()+100)
             ax.legend()
-            plt.show()
+            #plt.show()
 
         st.pyplot(plt,bbox_inches='tight')
 
@@ -301,7 +301,7 @@ def app():
             ax.bar(ylabels,xvalues,color=colors,label='Counterfactual')
             ax.set_ylim(0,s3.max()+100)
             ax.legend()
-            plt.show()
+            #plt.show()
 
         st.pyplot(plt,bbox_inches='tight')
 
@@ -325,9 +325,10 @@ def app():
         ax.bar(ylabels,xvalues,color=colors,label='Counterfactual')
         ax.set_ylim(0,s3.max()+50)
         ax.legend()
-        plt.show()
+        #plt.show()
 
         st.pyplot(plt,bbox_inches='tight')
+
 
 
 
