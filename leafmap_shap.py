@@ -18,8 +18,8 @@ import leafmap.foliumap as leafmap
 @st.cache_data
 def load_imp():
 
-    #with open('shap_values', 'rb') as f:
-    #      shap_values = dill.load(f)
+    with open('shap_values', 'rb') as f:
+          shap_values = dill.load(f)
 
     finaldf = pd.read_csv('finaldf.csv')
     dfcopy = pd.read_csv('dfcopy.csv')
@@ -36,7 +36,7 @@ def load_imp():
 
     test_X = test_X[0:10000]
 
-    shap_values = shap_exp.shap_values(test_X)
+    #shap_values = shap_exp.shap_values(test_X)
 
     s = pd.DataFrame(shap_values)
     s.columns = test_X.columns
