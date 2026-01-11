@@ -231,12 +231,15 @@ def app():
 
         shap_values_input = explainer.shap_values(df3[0:1])
 
-        st.set_option('deprecation.showPyplotGlobalUse', False)
+        #st.set_option('deprecation.showPyplotGlobalUse', False)
+        
         st.pyplot(shap.summary_plot(shap_values, test_X, plot_type="bar"))
+        #st.pyplot(plt.gcf())
 
         st.write('SHAP Explanation for the input')
 
         st.pyplot(shap.decision_plot(explainer.expected_value, shap_values_input, test_X))
+
 
 
 
