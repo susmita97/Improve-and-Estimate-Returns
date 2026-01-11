@@ -36,6 +36,8 @@ def load_imp():
 
     test_X = test_X[0:10000]
 
+    shap_values = shap_exp.shap_values(test_X)
+
     s = pd.DataFrame(shap_values)
     s.columns = test_X.columns
     kmeans = KMeans(n_clusters = 3, random_state = 100).fit(s)
