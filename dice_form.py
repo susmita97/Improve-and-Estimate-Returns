@@ -11,7 +11,7 @@ from dice_ml import Dice
 
 st.set_page_config(layout="wide")
 
-@st.cache
+@st.cache_data
 def load_imp():
 
     listfeat = ['RESIDENTIAL UNITS',
@@ -43,7 +43,7 @@ def load_imp():
 
     return [exp_genetic_boston, rf_model, df, df3]
 
-@st.cache
+@st.cache_data
 def display_neighborhoods(df):
 
     neighborhoods = list(df['neighborhood'].unique())
@@ -328,4 +328,5 @@ def app():
         plt.show()
 
         st.pyplot(plt,bbox_inches='tight')
+
 
