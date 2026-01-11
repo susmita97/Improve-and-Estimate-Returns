@@ -15,11 +15,11 @@ import leafmap.foliumap as leafmap
 
 #st.set_page_config(layout="wide")
 
-@st.cache(suppress_st_warning = True, allow_output_mutation=True)
+@st.cache
 def load_imp():
 
-    with open('shap_values', 'rb') as f:
-          shap_values = dill.load(f)
+    #with open('shap_values', 'rb') as f:
+    #      shap_values = dill.load(f)
 
     finaldf = pd.read_csv('finaldf.csv')
     dfcopy = pd.read_csv('dfcopy.csv')
@@ -60,7 +60,7 @@ def load_imp():
 
     return [dfcopy, shap_exp, kmeans, cluster1, cluster2, cluster3]
 
-@st.cache(suppress_st_warning=True)
+@st.cache
 def display_neighborhoods(df):
 
     neighborhoods = list(df['neighborhood'].unique())
