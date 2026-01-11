@@ -15,7 +15,7 @@ import leafmap.foliumap as leafmap
 
 #st.set_page_config(layout="wide")
 
-@st.cache
+@st.cache_data
 def load_imp():
 
     #with open('shap_values', 'rb') as f:
@@ -62,7 +62,7 @@ def load_imp():
 
     return [dfcopy, shap_exp, kmeans, cluster1, cluster2, cluster3]
 
-@st.cache
+@st.cache_data
 def display_neighborhoods(df):
 
     neighborhoods = list(df['neighborhood'].unique())
